@@ -1,0 +1,37 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to DD-WRT",
+        "description": "Enter the IP address of your DD-WRT router.",
+        "data": {
+          "router_ip": "Router IP",
+          "router_port": "Port (Optional, default 80/443)"
+        }
+      },
+      "auth": {
+        "title": "Authentication",
+        "description": "Enter your router credentials.",
+        "data": {
+          "username": "Username",
+          "password": "Password"
+        }
+      },
+      "config": {
+        "title": "Configuration",
+        "description": "Set a friendly name and select interfaces to track.",
+        "data": {
+          "name": "Friendly Name",
+          "tracker_interfaces": "Interfaces to Monitor"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to the router.",
+      "invalid_auth": "Invalid authentication credentials."
+    },
+    "abort": {
+      "already_configured": "Device is already configured"
+    }
+  }
+}

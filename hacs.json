@@ -1,0 +1,5 @@
+{
+  "name": "DD-WRT",
+  "render_readme": true,
+  "filename": "custom_components/ddwrt/manifest.json"
+}

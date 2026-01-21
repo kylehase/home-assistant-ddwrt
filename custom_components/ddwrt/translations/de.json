@@ -1,0 +1,37 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Verbindung zu DD-WRT",
+        "description": "Geben Sie die IP-Adresse Ihres DD-WRT-Routers ein.",
+        "data": {
+          "router_ip": "Router-IP",
+          "router_port": "Port (Optional, Standard 80/443)"
+        }
+      },
+      "auth": {
+        "title": "Authentifizierung",
+        "description": "Geben Sie Ihre Router-Anmeldedaten ein.",
+        "data": {
+          "username": "Benutzername",
+          "password": "Passwort"
+        }
+      },
+      "config": {
+        "title": "Konfiguration",
+        "description": "Legen Sie einen freundlichen Namen fest und wählen Sie Schnittstellen zum Überwachen aus.",
+        "data": {
+          "name": "Freundlicher Name",
+          "tracker_interfaces": "Zu überwachende Schnittstellen"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Verbindung zum Router fehlgeschlagen.",
+      "invalid_auth": "Ungültige Anmeldedaten."
+    },
+    "abort": {
+      "already_configured": "Gerät ist bereits konfiguriert"
+    }
+  }
+}

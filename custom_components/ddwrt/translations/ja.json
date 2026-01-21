@@ -1,0 +1,37 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "DD-WRTに接続",
+        "description": "DD-WRTルーターのIPアドレスを入力してください。",
+        "data": {
+          "router_ip": "ルーターIP",
+          "router_port": "ポート (オプション、デフォルト 80/443)"
+        }
+      },
+      "auth": {
+        "title": "認証",
+        "description": "ルーターの認証情報を入力してください。",
+        "data": {
+          "username": "ユーザー名",
+          "password": "パスワード"
+        }
+      },
+      "config": {
+        "title": "構成",
+        "description": "フレンドリー名を設定し、追跡するインターフェースを選択してください。",
+        "data": {
+          "name": "フレンドリー名",
+          "tracker_interfaces": "監視するインターフェース"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "ルーターに接続できませんでした。",
+      "invalid_auth": "認証情報が無効です。"
+    },
+    "abort": {
+      "already_configured": "デバイスはすでに構成されています"
+    }
+  }
+}

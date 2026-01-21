@@ -1,0 +1,37 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Conectar a DD-WRT",
+        "description": "Introduzca la dirección IP de su enrutador DD-WRT.",
+        "data": {
+          "router_ip": "IP del Enrutador",
+          "router_port": "Puerto (Opcional, predeterminado 80/443)"
+        }
+      },
+      "auth": {
+        "title": "Autenticación",
+        "description": "Introduzca las credenciales de su enrutador.",
+        "data": {
+          "username": "Usuario",
+          "password": "Contraseña"
+        }
+      },
+      "config": {
+        "title": "Configuración",
+        "description": "Establezca un nombre amigable y seleccione las interfaces para rastrear.",
+        "data": {
+          "name": "Nombre Amigable",
+          "tracker_interfaces": "Interfaces para Monitorear"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Error al conectar con el enrutador.",
+      "invalid_auth": "Credenciales de autenticación no válidas."
+    },
+    "abort": {
+      "already_configured": "El dispositivo ya está configurado"
+    }
+  }
+}
