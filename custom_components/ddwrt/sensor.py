@@ -30,6 +30,8 @@ IGNORED_KEYS = {
     "mem_info",        # Handled by derived sensor
     "packet_info",     # Complex string, ignore
     "active_wds",      # Usually empty/complex
+    "pppoe_ac_name",   # Ignored per user request
+    "ipinfo",          # Redundant with wan_ipaddr
 }
 
 def format_name(key: str) -> str:
@@ -77,21 +79,21 @@ SENSOR_TYPES: dict[str, SensorEntityDescription] = {
     ),
     "load_avg_1min": SensorEntityDescription(
         key="load_avg_1min",
-        name="Load Average (1m)",
+        name="Load Average (1min)",
         translation_key="load_avg_1min",
         icon="mdi:cpu-64-bit",
         state_class=SensorStateClass.MEASUREMENT,
     ),
     "load_avg_5min": SensorEntityDescription(
         key="load_avg_5min",
-        name="Load Average (5m)",
+        name="Load Average (5min)",
         translation_key="load_avg_5min",
         icon="mdi:cpu-64-bit",
         state_class=SensorStateClass.MEASUREMENT,
     ),
     "load_avg_15min": SensorEntityDescription(
         key="load_avg_15min",
-        name="Load Average (15m)",
+        name="Load Average (15min)",
         translation_key="load_avg_15min",
         icon="mdi:cpu-64-bit",
         state_class=SensorStateClass.MEASUREMENT,
@@ -175,13 +177,6 @@ SENSOR_TYPES: dict[str, SensorEntityDescription] = {
         translation_key="assoc_count",
         icon="mdi:devices",
         state_class=SensorStateClass.MEASUREMENT,
-    ),
-    "ipinfo": SensorEntityDescription(
-        key="ipinfo",
-        name="Router IP Info",
-        translation_key="ipinfo",
-        icon="mdi:web",
-        entity_category=EntityCategory.DIAGNOSTIC,
     ),
 }
 
@@ -369,9 +364,6 @@ class DDWRTSensor(CoordinatorEntity, SensorEntity):
         if key == "wan_ipaddr" and val:
              return val.split("/")[0]
 
-        if key == "ipinfo" and val:
-             return val.replace("IP:", "").strip()
-             
         if key.startswith("cpu_temp") and val:
              match = re.search(r"([\d\.]+)", val)
              if match: return match.group(1)

@@ -42,10 +42,10 @@
     },
     "binary_sensor": {
       "wan_status": {
-        "name": "WAN Status"
+        "name": "Internet Connection"
       },
       "wl_radio": {
-        "name": "Wireless Radio"
+        "name": "Wi-Fi Radio"
       }
     },
     "sensor": {
@@ -59,13 +59,13 @@
         "name": "WAN Uptime"
       },
       "load_avg_1min": {
-        "name": "Load Average (1m)"
+        "name": "Load Average (1 min)"
       },
       "load_avg_5min": {
-        "name": "Load Average (5m)"
+        "name": "Load Average (5 min)"
       },
       "load_avg_15min": {
-        "name": "Load Average (15m)"
+        "name": "Load Average (15 min)"
       },
       "ttraff_in": {
         "name": "Total Traffic In"
@@ -96,9 +96,6 @@
       },
       "assoc_count": {
         "name": "Wireless Clients Connected"
-      },
-      "ipinfo": {
-        "name": "Router IP Info"
       }
     }
   }

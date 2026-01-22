@@ -1,4 +1,4 @@
-# DD-WRT Integration for Home Assistant
+# (yet another) DD-WRT Integration for Home Assistant
 A robust, asynchronous custom component for DD-WRT routers, providing sensors, binary sensors, buttons, and device tracking via the `.live.asp` polling interface.
 ## Features
 ### v1.1.0 Highlights

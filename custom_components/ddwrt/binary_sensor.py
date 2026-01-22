@@ -18,6 +18,7 @@ from .coordinator import DDWRTDataUpdateCoordinator
 BINARY_SENSOR_TYPES: dict[str, BinarySensorEntityDescription] = {
     "wan_status": BinarySensorEntityDescription(
         key="wan_status",
+        name="Internet Connection",
         translation_key="wan_status",
         icon="mdi:router-network",
         device_class=BinarySensorDeviceClass.CONNECTIVITY,
@@ -25,6 +26,7 @@ BINARY_SENSOR_TYPES: dict[str, BinarySensorEntityDescription] = {
     ),
     "wl_radio": BinarySensorEntityDescription(
         key="wl_radio",
+        name="Wi-Fi Radio",
         translation_key="wl_radio",
         icon="mdi:wifi",
         device_class=BinarySensorDeviceClass.CONNECTIVITY,

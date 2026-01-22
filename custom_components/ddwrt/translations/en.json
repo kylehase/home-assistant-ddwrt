@@ -33,5 +33,70 @@
     "abort": {
       "already_configured": "Device is already configured"
     }
+  },
+  "entity": {
+    "button": {
+        "reboot": {
+            "name": "Reboot Router"
+        }
+    },
+    "binary_sensor": {
+      "wan_status": {
+        "name": "Internet Connection"
+      },
+      "wl_radio": {
+        "name": "Wi-Fi Radio"
+      }
+    },
+    "sensor": {
+      "wan_ipaddr": {
+        "name": "WAN IP"
+      },
+      "uptime": {
+        "name": "Uptime"
+      },
+      "wan_uptime": {
+        "name": "WAN Uptime"
+      },
+      "load_avg_1min": {
+        "name": "Load Average (1 min)"
+      },
+      "load_avg_5min": {
+        "name": "Load Average (5 min)"
+      },
+      "load_avg_15min": {
+        "name": "Load Average (15 min)"
+      },
+      "ttraff_in": {
+        "name": "Total Traffic In"
+      },
+      "ttraff_out": {
+        "name": "Total Traffic Out"
+      },
+      "wan_in_rate": {
+        "name": "WAN Download Speed"
+      },
+      "wan_out_rate": {
+        "name": "WAN Upload Speed"
+      },
+      "cpu_temp0": {
+        "name": "CPU Temperature"
+      },
+      "mem_total_kb": {
+        "name": "Memory Total"
+      },
+      "mem_free_kb": {
+        "name": "Memory Free"
+      },
+      "mem_used_percent": {
+        "name": "Memory Used"
+      },
+      "wan_shortproto": {
+        "name": "WAN Protocol"
+      },
+      "assoc_count": {
+        "name": "Wireless Clients Connected"
+      }
+    }
   }
 }
