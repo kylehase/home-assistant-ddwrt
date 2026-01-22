@@ -15,11 +15,12 @@ from .const import (
 )
 from .coordinator import DDWRTDataUpdateCoordinator
 
-# Added Platform.BINARY_SENSOR
+# Added Platform.BUTTON
 PLATFORMS: list[Platform] = [
     Platform.SENSOR,
     Platform.DEVICE_TRACKER,
     Platform.BINARY_SENSOR,
+    Platform.BUTTON,
 ]
 
 

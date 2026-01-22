@@ -33,5 +33,62 @@
     "abort": {
       "already_configured": "El dispositivo ya está configurado"
     }
+  },
+  "entity": {
+    "binary_sensor": {
+      "wan_status": {
+        "name": "Estado WAN"
+      },
+      "wl_radio": {
+        "name": "Radio Inalámbrica"
+      }
+    },
+    "sensor": {
+      "wan_ipaddr": {
+        "name": "IP WAN"
+      },
+      "uptime": {
+        "name": "Tiempo de actividad"
+      },
+      "wan_uptime": {
+        "name": "Tiempo de actividad WAN"
+      },
+      "load_avg_1min": {
+        "name": "Carga media (1m)"
+      },
+      "load_avg_5min": {
+        "name": "Carga media (5m)"
+      },
+      "load_avg_15min": {
+        "name": "Carga media (15m)"
+      },
+      "ttraff_in": {
+        "name": "Tráfico total de entrada"
+      },
+      "ttraff_out": {
+        "name": "Tráfico total de salida"
+      },
+      "cpu_temp0": {
+        "name": "Temperatura de CPU"
+      },
+      "mem_total_kb": {
+        "name": "Memoria total"
+      },
+      "mem_free_kb": {
+        "name": "Memoria libre"
+      },
+      "mem_used_percent": {
+        "name": "Memoria usada"
+      },
+      "wan_shortproto": {
+        "name": "Protocolo WAN"
+      },
+      "assoc_count": {
+        "name": "Clientes inalámbricos conectados"
+      },
+      "ipinfo": {
+        "name": "Información IP del router"
+      }
+    }
   }
 }

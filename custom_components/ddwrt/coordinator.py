@@ -47,9 +47,6 @@ class DDWRTDataUpdateCoordinator(DataUpdateCoordinator):
     async def _async_update_data(self) -> dict[str, any]:
         """Fetch data from all endpoints."""
         data = {}
-        
-        # We need to preserve session auth cookies/basic auth across requests if needed,
-        # but aiohttp with BasicAuth object usually handles it per request.
         auth = aiohttp.BasicAuth(self.username, self.password)
 
         for endpoint in ENDPOINTS:
@@ -81,10 +78,11 @@ class DDWRTDataUpdateCoordinator(DataUpdateCoordinator):
         matches = DDWRT_DATA_REGEX.findall(text)
         
         for key, value in matches:
-            # Clean up value
             value = value.strip()
-            
-            # Check if it is a list/complex string (starts with single quote)
+            # If value starts with single quote, it's a list.
+            # We preserve it as a string here (or robustly split) 
+            # and let specific sensors handle precise parsing if needed (like mem_info)
+            # However, for generic lists, we can try basic splitting.
             if value.startswith("'"):
                 result[key] = self._parse_complex_value(value)
             else:
@@ -94,14 +92,7 @@ class DDWRTDataUpdateCoordinator(DataUpdateCoordinator):
 
     def _parse_complex_value(self, value_str: str) -> list[str]:
         """Parse values like 'a','b','c' into a list."""
-        # This is a naive split by comma, but handles quoted strings mostly.
-        # Since DD-WRT outputs JavaScript-like arrays, we can strip quotes and split.
-        # A more robust regex for quoted strings:
-        
-        items = []
-        # Find all content inside single quotes
-        # This regex matches 'content' ignoring commas inside
         parts = re.findall(r"'([^']*)'", value_str)
         if parts:
             return parts
-        return [value_str] # Fallback
+        return [value_str]

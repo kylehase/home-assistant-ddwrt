@@ -33,5 +33,62 @@
     "abort": {
       "already_configured": "デバイスはすでに構成されています"
     }
+  },
+  "entity": {
+    "binary_sensor": {
+      "wan_status": {
+        "name": "WANステータス"
+      },
+      "wl_radio": {
+        "name": "無線ラジオ"
+      }
+    },
+    "sensor": {
+      "wan_ipaddr": {
+        "name": "WAN IP"
+      },
+      "uptime": {
+        "name": "稼働時間"
+      },
+      "wan_uptime": {
+        "name": "WAN稼働時間"
+      },
+      "load_avg_1min": {
+        "name": "負荷平均 (1分)"
+      },
+      "load_avg_5min": {
+        "name": "負荷平均 (5分)"
+      },
+      "load_avg_15min": {
+        "name": "負荷平均 (15分)"
+      },
+      "ttraff_in": {
+        "name": "総受信トラフィック"
+      },
+      "ttraff_out": {
+        "name": "総送信トラフィック"
+      },
+      "cpu_temp0": {
+        "name": "CPU温度"
+      },
+      "mem_total_kb": {
+        "name": "合計メモリ"
+      },
+      "mem_free_kb": {
+        "name": "空きメモリ"
+      },
+      "mem_used_percent": {
+        "name": "使用メモリ"
+      },
+      "wan_shortproto": {
+        "name": "WANプロトコル"
+      },
+      "assoc_count": {
+        "name": "接続済み無線クライアント"
+      },
+      "ipinfo": {
+        "name": "ルーターIP情報"
+      }
+    }
   }
 }

@@ -15,14 +15,15 @@ CONF_USE_SSL = "use_ssl"
 CONF_TRACKER_INTERFACES = "tracker_interfaces"
 
 # Endpoints to poll in sequence
+# Status_Router: cpu_temp, mem_info, router_time
+# Status_Internet: wan_status, ttraff_in/out
+# Status_Lan: arp_table, dhcp_leases
+# Status_Wireless: active_wireless, assoc_count
 ENDPOINTS = [
-    "Statusinfo.live.asp",
-    "Status_Internet.live.asp",
     "Status_Router.live.asp",
-    "Networking.live.asp",
+    "Status_Internet.live.asp",
     "Status_Lan.live.asp",
     "Status_Wireless.live.asp",
-    "Info.live.htm",
 ]
 
 # Keys that identify device lists for tracking

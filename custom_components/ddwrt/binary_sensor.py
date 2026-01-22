@@ -18,13 +18,15 @@ from .coordinator import DDWRTDataUpdateCoordinator
 BINARY_SENSOR_TYPES: dict[str, BinarySensorEntityDescription] = {
     "wan_status": BinarySensorEntityDescription(
         key="wan_status",
-        name="WAN Status",
+        translation_key="wan_status",
+        icon="mdi:router-network",
         device_class=BinarySensorDeviceClass.CONNECTIVITY,
         entity_category=EntityCategory.DIAGNOSTIC,
     ),
     "wl_radio": BinarySensorEntityDescription(
         key="wl_radio",
-        name="Wireless Radio",
+        translation_key="wl_radio",
+        icon="mdi:wifi",
         device_class=BinarySensorDeviceClass.CONNECTIVITY,
         entity_category=EntityCategory.DIAGNOSTIC,
     ),
@@ -43,8 +45,10 @@ async def async_setup_entry(
     entities = []
 
     for key, desc in BINARY_SENSOR_TYPES.items():
-        if key in coordinator.data:
-            entities.append(DDWRTBinarySensor(coordinator, device_name, desc))
+        entity = DDWRTBinarySensor(coordinator, device_name, desc)
+        if key not in coordinator.data:
+             entity._attr_entity_registry_enabled_default = False
+        entities.append(entity)
 
     async_add_entities(entities)
 
@@ -64,6 +68,7 @@ class DDWRTBinarySensor(CoordinatorEntity, BinarySensorEntity):
         self._device_name = device_name
         self._attr_unique_id = f"{device_name}_{description.key}"
         self._attr_has_entity_name = True
+        self._attr_entity_registry_enabled_default = True
         self._attr_device_info = {
             "identifiers": {(DOMAIN, device_name)},
             "name": device_name.replace("ddwrt-", "").replace("-", " ").title(),
@@ -79,9 +84,9 @@ class DDWRTBinarySensor(CoordinatorEntity, BinarySensorEntity):
             return None
 
         if self.entity_description.key == "wan_status":
-            return val.lower().strip() == "connected"
+            return val.strip().lower().startswith("connected")
 
         if self.entity_description.key == "wl_radio":
-            return val.lower().strip() == "active"
+            return val.strip().lower() == "active"
 
         return bool(val)
