@@ -56,42 +56,49 @@ def format_name(key: str) -> str:
 SENSOR_TYPES: dict[str, SensorEntityDescription] = {
     "wan_ipaddr": SensorEntityDescription(
         key="wan_ipaddr",
+        name="WAN IP",
         translation_key="wan_ipaddr",
         icon="mdi:ip",
         entity_category=EntityCategory.DIAGNOSTIC,
     ),
     "uptime": SensorEntityDescription(
         key="uptime",
+        name="Uptime",
         translation_key="uptime",
         icon="mdi:clock-outline",
         entity_category=EntityCategory.DIAGNOSTIC,
     ),
     "wan_uptime": SensorEntityDescription(
         key="wan_uptime",
+        name="WAN Uptime",
         translation_key="wan_uptime",
         icon="mdi:timer-outline",
         entity_category=EntityCategory.DIAGNOSTIC,
     ),
     "load_avg_1min": SensorEntityDescription(
         key="load_avg_1min",
+        name="Load Average (1m)",
         translation_key="load_avg_1min",
         icon="mdi:cpu-64-bit",
         state_class=SensorStateClass.MEASUREMENT,
     ),
     "load_avg_5min": SensorEntityDescription(
         key="load_avg_5min",
+        name="Load Average (5m)",
         translation_key="load_avg_5min",
         icon="mdi:cpu-64-bit",
         state_class=SensorStateClass.MEASUREMENT,
     ),
     "load_avg_15min": SensorEntityDescription(
         key="load_avg_15min",
+        name="Load Average (15m)",
         translation_key="load_avg_15min",
         icon="mdi:cpu-64-bit",
         state_class=SensorStateClass.MEASUREMENT,
     ),
     "ttraff_in": SensorEntityDescription(
         key="ttraff_in",
+        name="Total Traffic In",
         translation_key="ttraff_in",
         icon="mdi:download-network",
         native_unit_of_measurement=UnitOfInformation.MEGABYTES,
@@ -99,6 +106,7 @@ SENSOR_TYPES: dict[str, SensorEntityDescription] = {
     ),
     "ttraff_out": SensorEntityDescription(
         key="ttraff_out",
+        name="Total Traffic Out",
         translation_key="ttraff_out",
         icon="mdi:upload-network",
         native_unit_of_measurement=UnitOfInformation.MEGABYTES,
@@ -107,6 +115,7 @@ SENSOR_TYPES: dict[str, SensorEntityDescription] = {
     # New Rate Sensors
     "wan_in_rate": SensorEntityDescription(
         key="wan_in_rate",
+        name="WAN Download Speed",
         translation_key="wan_in_rate",
         icon="mdi:speedometer",
         native_unit_of_measurement=UnitOfDataRate.KILOBYTES_PER_SECOND,
@@ -114,6 +123,7 @@ SENSOR_TYPES: dict[str, SensorEntityDescription] = {
     ),
     "wan_out_rate": SensorEntityDescription(
         key="wan_out_rate",
+        name="WAN Upload Speed",
         translation_key="wan_out_rate",
         icon="mdi:speedometer",
         native_unit_of_measurement=UnitOfDataRate.KILOBYTES_PER_SECOND,
@@ -121,6 +131,7 @@ SENSOR_TYPES: dict[str, SensorEntityDescription] = {
     ),
     "cpu_temp0": SensorEntityDescription(
         key="cpu_temp0",
+        name="CPU Temperature",
         translation_key="cpu_temp0",
         icon="mdi:thermometer",
         native_unit_of_measurement="°C",
@@ -128,6 +139,7 @@ SENSOR_TYPES: dict[str, SensorEntityDescription] = {
     ),
     "mem_total_kb": SensorEntityDescription(
         key="mem_total_kb",
+        name="Memory Total",
         translation_key="mem_total_kb",
         icon="mdi:memory",
         native_unit_of_measurement=UnitOfInformation.KILOBYTES,
@@ -136,6 +148,7 @@ SENSOR_TYPES: dict[str, SensorEntityDescription] = {
     ),
     "mem_free_kb": SensorEntityDescription(
         key="mem_free_kb",
+        name="Memory Free",
         translation_key="mem_free_kb",
         icon="mdi:memory",
         native_unit_of_measurement=UnitOfInformation.KILOBYTES,
@@ -143,6 +156,7 @@ SENSOR_TYPES: dict[str, SensorEntityDescription] = {
     ),
     "mem_used_percent": SensorEntityDescription(
         key="mem_used_percent",
+        name="Memory Used",
         translation_key="mem_used_percent",
         icon="mdi:memory",
         native_unit_of_measurement="%",
@@ -150,18 +164,21 @@ SENSOR_TYPES: dict[str, SensorEntityDescription] = {
     ),
     "wan_shortproto": SensorEntityDescription(
         key="wan_shortproto",
+        name="WAN Protocol",
         translation_key="wan_shortproto",
         icon="mdi:network-outline",
         entity_category=EntityCategory.DIAGNOSTIC,
     ),
     "assoc_count": SensorEntityDescription(
         key="assoc_count",
+        name="Wireless Clients Connected",
         translation_key="assoc_count",
         icon="mdi:devices",
         state_class=SensorStateClass.MEASUREMENT,
     ),
     "ipinfo": SensorEntityDescription(
         key="ipinfo",
+        name="Router IP Info",
         translation_key="ipinfo",
         icon="mdi:web",
         entity_category=EntityCategory.DIAGNOSTIC,

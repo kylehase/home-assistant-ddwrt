@@ -27,6 +27,7 @@ async def async_setup_entry(
             device_name,
             ButtonEntityDescription(
                 key="reboot",
+                name="Reboot Router",
                 translation_key="reboot",
                 icon="mdi:restart",
                 entity_category=EntityCategory.CONFIG,
